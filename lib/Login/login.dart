@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:health/Profile/profile.dart';
 import 'package:health/Signup/signup.dart';
+import 'package:health/dashboard/dashboard.dart';
 
 class LoginPage extends StatelessWidget {
   final String? destination;
@@ -83,8 +84,8 @@ class LoginPage extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  if (destination == "patient") {
-                    return const ProfilePage();
+                  if (destination == "doctor") {
+                    return const DashboardPage();
                   }
                   return const Placeholder();
                 },
