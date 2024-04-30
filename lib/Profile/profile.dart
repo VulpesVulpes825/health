@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:country_list_pick/country_list_pick.dart';
+import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -51,6 +51,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       "Contact Information",
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -59,8 +62,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 60,
                           child: TextField(
                             decoration: InputDecoration(
-                              floatingLabelBehavior:
-                                  FloatingLabelBehavior.always,
                               labelText: 'Street Address',
                               hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(),
@@ -82,9 +83,33 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           initialSelection: 'US',
                         ),
+                        const SizedBox(
+                          width: 250,
+                          height: 60,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              labelText: 'State',
+                              hintStyle: TextStyle(color: Colors.grey),
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 250,
+                          height: 60,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              labelText: 'City',
+                              hintStyle: TextStyle(color: Colors.grey),
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
-                    const SizedBox(height: 10,),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -93,8 +118,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 60,
                           child: TextField(
                             decoration: InputDecoration(
-                              floatingLabelBehavior:
-                              FloatingLabelBehavior.always,
                               labelText: 'Zip Code',
                               hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(),
@@ -106,8 +129,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 60,
                           child: TextField(
                             decoration: InputDecoration(
-                              floatingLabelBehavior:
-                              FloatingLabelBehavior.always,
                               labelText: 'Mobile No.',
                               hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(),
@@ -119,8 +140,6 @@ class _ProfilePageState extends State<ProfilePage> {
                           height: 60,
                           child: TextField(
                             decoration: InputDecoration(
-                              floatingLabelBehavior:
-                              FloatingLabelBehavior.always,
                               labelText: 'Alternative No.',
                               hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(),
@@ -128,32 +147,91 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ],
-                    )
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      "Insurance Provider",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    const Row(
+                      children: [
+                        Expanded(
+                            child: Wrap(
+                          spacing: 20,
+                          runSpacing: 20,
+                          children: [
+                            SizedBox(
+                              width: 250,
+                              height: 60,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'Policy Holder',
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 250,
+                              height: 60,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'Group ID',
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 250,
+                              height: 60,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'Insurance ID',
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 250,
+                              height: 60,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  labelText: 'Insurance Type',
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  border: OutlineInputBorder(),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
                   ],
                 ))));
   }
 
   SizedBox datePicker(BuildContext context) {
     return SizedBox(
-                        width: 200,
-                        height: 60,
-                        child: TextField(
-                          controller: _dateController,
-                          decoration: const InputDecoration(
-                              labelText: 'Date of Birth',
-                              filled: true,
-                              prefixIcon: Icon(Icons.calendar_today),
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide.none),
-                              focusedBorder: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(color: Colors.blue))),
-                          readOnly: true,
-                          onTap: () {
-                            _selectDate(context);
-                          },
-                        ),
-                      );
+      width: 200,
+      height: 60,
+      child: TextField(
+        controller: _dateController,
+        decoration: const InputDecoration(
+            labelText: 'Date of Birth',
+            prefixIcon: Icon(Icons.calendar_today),
+            border: OutlineInputBorder(),
+            focusedBorder:
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.blue))),
+        readOnly: true,
+        onTap: () {
+          _selectDate(context);
+        },
+      ),
+    );
   }
 }
 

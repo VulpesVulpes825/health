@@ -26,7 +26,7 @@ class WelcomeScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return const LoginPage();
+                                        return const LoginPage(destination: 'patient',);
                                       },
                                     ),
                                   );
@@ -42,7 +42,7 @@ class WelcomeScreen extends StatelessWidget {
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) {
-                                        return const LoginPage();
+                                        return const LoginPage(destination: 'doctor',);
                                       },
                                     ),
                                   );

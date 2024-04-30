@@ -3,7 +3,8 @@ import 'package:health/Profile/profile.dart';
 import 'package:health/Signup/signup.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  final String? destination;
+  const LoginPage({super.key, @required this.destination});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,10 @@ class LoginPage extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) {
-                  return const ProfilePage();
+                  if (destination == "patient") {
+                    return const ProfilePage();
+                  }
+                  return const Placeholder();
                 },
               ),
             );
