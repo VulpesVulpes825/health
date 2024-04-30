@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:health/dashboard/patient.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -17,7 +18,7 @@ class _DashboardPageState extends State<DashboardPage> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = const Placeholder();
+        page = const PatientPage();
         break;
       case 1:
         page = const Placeholder();
@@ -81,7 +82,7 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 SafeArea(
                   child: NavigationRail(
-                    extended: constraints.maxWidth >= 600,
+                    extended: false,
                     destinations: const [
                       NavigationRailDestination(
                         icon: Icon(Icons.personal_injury),

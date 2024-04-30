@@ -58,8 +58,7 @@ class LoginPage extends StatelessWidget {
               hintText: "Username",
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
-                  borderSide: BorderSide.none
-              ),
+                  borderSide: BorderSide.none),
               fillColor: Colors.purple.withOpacity(0.1),
               filled: true,
               prefixIcon: const Icon(Icons.person)),
@@ -87,7 +86,7 @@ class LoginPage extends StatelessWidget {
                   if (destination == "doctor") {
                     return const DashboardPage();
                   }
-                  return const Placeholder();
+                  return const ProfilePage();
                 },
               ),
             );
@@ -109,7 +108,8 @@ class LoginPage extends StatelessWidget {
   _forgotPassword(context) {
     return TextButton(
       onPressed: () {},
-      child: const Text("Forgot password?",
+      child: const Text(
+        "Forgot password?",
         style: TextStyle(color: Colors.purple),
       ),
     );
@@ -131,8 +131,10 @@ class LoginPage extends StatelessWidget {
                 ),
               );
             },
-            child: const Text("Sign Up", style: TextStyle(color: Colors.purple),)
-        )
+            child: const Text(
+              "Sign Up",
+              style: TextStyle(color: Colors.purple),
+            ))
       ],
     );
   }

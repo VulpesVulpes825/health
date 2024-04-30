@@ -30,7 +30,6 @@ class SignupPage extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     const SizedBox(height: 60.0),
-
                     const Text(
                       "Sign up",
                       style: TextStyle(
@@ -59,9 +58,7 @@ class SignupPage extends StatelessWidget {
                           filled: true,
                           prefixIcon: const Icon(Icons.person)),
                     ),
-
                     const SizedBox(height: 20),
-
                     TextField(
                       decoration: InputDecoration(
                           hintText: "Email",
@@ -72,9 +69,7 @@ class SignupPage extends StatelessWidget {
                           filled: true,
                           prefixIcon: const Icon(Icons.email)),
                     ),
-
                     const SizedBox(height: 20),
-
                     TextField(
                       decoration: InputDecoration(
                         hintText: "Password",
@@ -87,9 +82,7 @@ class SignupPage extends StatelessWidget {
                       ),
                       obscureText: true,
                     ),
-
                     const SizedBox(height: 20),
-
                     TextField(
                       decoration: InputDecoration(
                         hintText: "Confirm Password",
@@ -106,10 +99,8 @@ class SignupPage extends StatelessWidget {
                 ),
                 Container(
                     padding: const EdgeInsets.only(top: 3, left: 3),
-
                     child: ElevatedButton(
-                      onPressed: () {
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: const StadiumBorder(),
                         padding: const EdgeInsets.symmetric(vertical: 16),
@@ -119,9 +110,7 @@ class SignupPage extends StatelessWidget {
                         "Sign up",
                         style: TextStyle(fontSize: 20),
                       ),
-                    )
-                ),
-
+                    )),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -132,13 +121,17 @@ class SignupPage extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) {
-                                return const LoginPage(destination: 'patient',);
+                                return const LoginPage(
+                                  destination: 'patient',
+                                );
                               },
                             ),
                           );
                         },
-                        child: const Text("Login", style: TextStyle(color: Colors.purple),)
-                    )
+                        child: const Text(
+                          "Login",
+                          style: TextStyle(color: Colors.purple),
+                        ))
                   ],
                 )
               ],
